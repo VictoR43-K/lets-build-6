@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | APEX TACKLE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p>FREE SHIPPING ON ORDERS OVER $150 | USE CODE: <strong>APEX25</strong> FOR 25% OFF</p>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header" id="mainHeader">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item has-dropdown">
+                        <a href="products.html">Rods</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-col">
+                                    <h4>By Type</h4>
+                                    <ul>
+                                        <li><a href="products.html?cat=spinning">Spinning Rods</a></li>
+                                        <li><a href="products.html?cat=casting">Casting Rods</a></li>
+                                        <li><a href="products.html?cat=flyrod">Fly Rods</a></li>
+                                        <li><a href="products.html?cat=surf">Surf Rods</a></li>
+                                        <li><a href="products.html?cat=ice">Ice Rods</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-col">
+                                    <h4>By Species</h4>
+                                    <ul>
+                                        <li><a href="products.html?species=bass">Bass</a></li>
+                                        <li><a href="products.html?species=trout">Trout</a></li>
+                                        <li><a href="products.html?species=salmon">Salmon</a></li>
+                                        <li><a href="products.html?species=walleye">Walleye</a></li>
+                                        <li><a href="products.html?species=saltwater">Saltwater</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-col featured">
+                                    <div class="mega-featured-card">
+                                        <img src="https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=400&q=80" alt="Featured Rod">
+                                        <div class="mega-featured-info">
+                                            <span class="tag">New Arrival</span>
+                                            <h5>APEX Elite Series</h5>
+                                            <a href="product-detail.html" class="link-arrow">Shop Now <i class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="products.html">Reels</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-col">
+                                    <h4>By Type</h4>
+                                    <ul>
+                                        <li><a href="products.html?cat=spinning-reels">Spinning Reels</a></li>
+                                        <li><a href="products.html?cat=baitcasting">Baitcasting Reels</a></li>
+                                        <li><a href="products.html?cat=fly-reels">Fly Reels</a></li>
+                                        <li><a href="products.html?cat=conventional">Conventional Reels</a></li>
+                                        <li><a href="products.html?cat=trolling">Trolling Reels</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-col">
+                                    <h4>By Series</h4>
+                                    <ul>
+                                        <li><a href="products.html?series=apex-pro">APEX Pro</a></li>
+                                        <li><a href="products.html?series=titanium">Titanium Elite</a></li>
+                                        <li><a href="products.html?series=carbon-x">Carbon X</a></li>
+                                        <li><a href="products.html?series=stealth">Stealth Series</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-col featured">
+                                    <div class="mega-featured-card">
+                                        <img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=400&q=80" alt="Featured Reel">
+                                        <div class="mega-featured-info">
+                                            <span class="tag">Best Seller</span>
+                                            <h5>Carbon X 3000</h5>
+                                            <a href="product-detail.html" class="link-arrow">Shop Now <i class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="products.html">Lures</a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="products.html?cat=crankbaits">Crankbaits</a></li>
+                                <li><a href="products.html?cat=soft-plastics">Soft Plastics</a></li>
+                                <li><a href="products.html?cat=spinnerbaits">Spinnerbaits</a></li>
+                                <li><a href="products.html?cat=topwater">Topwater</a></li>
+                                <li><a href="products.html?cat=jigs">Jigs</a></li>
+                                <li><a href="products.html?cat=swimbaits">Swimbaits</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="products.html">Line & Terminal</a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="products.html?cat=braided">Braided Line</a></li>
+                                <li><a href="products.html?cat=fluorocarbon">Fluorocarbon</a></li>
+                                <li><a href="products.html?cat=monofilament">Monofilament</a></li>
+                                <li><a href="products.html?cat=leaders">Leaders</a></li>
+                                <li><a href="products.html?cat=hooks">Hooks</a></li>
+                                <li><a href="products.html?cat=swivels">Swivels & Snaps</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="products.html?cat=apparel">Apparel</a></li>
+                    <li class="nav-item"><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">APEX<span class="logo-accent">TACKLE</span></span>
+            </a>
+
+            <div class="nav-right">
+                <button class="nav-icon search-toggle" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="#" class="nav-icon" aria-label="Account">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="cart.html" class="nav-icon cart-icon" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="text" placeholder="Search products, categories, articles..." class="search-input">
+                    <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
+                </form>
+                <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+                <div class="search-suggestions">
+                    <h4>Popular Searches</h4>
+                    <div class="search-tags">
+                        <a href="products.html?q=spinning">Spinning Reels</a>
+                        <a href="products.html?q=bass">Bass Rods</a>
+                        <a href="products.html?q=braided">Braided Line</a>
+                        <a href="products.html?q=crankbait">Crankbaits</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>All Products</span>
+            </nav>
+            <h1 class="page-title">ALL PRODUCTS</h1>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-page">
+        <div class="container">
+            <div class="products-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h4>Category <i class="fas fa-chevron-up"></i></h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" checked> All Products
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Rods (124)
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Reels (86)
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Lures (312)
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Line & Terminal (54)
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Accessories (248)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Price <i class="fas fa-chevron-up"></i></h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox"> Under $50
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> $50 - $100
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> $100 - $250
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> $250 - $500
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> $500+
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Brand <i class="fas fa-chevron-up"></i></h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox"> APEX Pro Series
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Carbon X
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Titanium Elite
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Stealth Series
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Ocean Master
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Species <i class="fas fa-chevron-up"></i></h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox"> Bass
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Trout
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Salmon
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Walleye
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Saltwater
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Rating <i class="fas fa-chevron-up"></i></h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span class="stars" style="color: #FFD23F;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span style="margin-left: 0.5rem;">& Up</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span class="stars" style="color: #FFD23F;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span style="margin-left: 0.5rem;">& Up</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span class="stars" style="color: #FFD23F;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span style="margin-left: 0.5rem;">& Up</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline-dark" style="width: 100%;">Clear All Filters</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products-main">
+                    <div class="products-toolbar">
+                        <p class="products-count">Showing <strong>1-24</strong> of <strong>824</strong> products</p>
+                        <div class="toolbar-right">
+                            <select class="sort-select">
+                                <option>Sort by: Featured</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Newest First</option>
+                                <option>Best Selling</option>
+                                <option>Top Rated</option>
+                            </select>
+                            <div class="view-options">
+                                <button class="view-btn active"><i class="fas fa-th"></i></button>
+                                <button class="view-btn"><i class="fas fa-list"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="products-grid">
+                        <!-- Product 1 -->
+                        <div class="product-card" data-category="rods">
+                            <div class="product-badges">
+                                <span class="badge badge-new">New</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?w=500&q=80" alt="APEX Elite Casting Rod" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=500&q=80" alt="APEX Elite Casting Rod Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Casting Rods</span>
+                                <h3 class="product-title"><a href="product-detail.html">APEX Elite Casting Rod</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-count">(127)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$299.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card" data-category="reels">
+                            <div class="product-badges">
+                                <span class="badge badge-hot">Best Seller</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=500&q=80" alt="Carbon X 3000 Spinning Reel" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1551913902-c92207136625?w=500&q=80" alt="Carbon X 3000 Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Spinning Reels</span>
+                                <h3 class="product-title"><a href="product-detail.html">Carbon X 3000 Spinning Reel</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(243)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$449.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card" data-category="rods">
+                            <div class="product-badges">
+                                <span class="badge badge-sale">20% OFF</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=500&q=80" alt="Pro Tournament Spinning Rod" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?w=500&q=80" alt="Pro Tournament Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Spinning Rods</span>
+                                <h3 class="product-title"><a href="product-detail.html">Pro Tournament Spinning Rod</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(89)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="original-price">$349.99</span>
+                                    <span class="current-price">$279.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="product-card" data-category="lures">
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1626128665085-483747621778?w=500&q=80" alt="DeepStrike Crankbait Set" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1582838038154-56b12e66e756?w=500&q=80" alt="DeepStrike Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Crankbaits</span>
+                                <h3 class="product-title"><a href="product-detail.html">DeepStrike Crankbait Set</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(156)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$49.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="product-card" data-category="reels">
+                            <div class="product-badges">
+                                <span class="badge badge-limited">Limited</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1551913902-c92207136625?w=500&q=80" alt="Titanium Elite Baitcaster" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=500&q=80" alt="Titanium Elite Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Baitcasting Reels</span>
+                                <h3 class="product-title"><a href="product-detail.html">Titanium Elite Baitcaster</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-count">(78)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$599.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="product-card" data-category="lures">
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1582838038154-56b12e66e756?w=500&q=80" alt="Swimbait Pro Series" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1626128665085-483747621778?w=500&q=80" alt="Swimbait Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Swimbaits</span>
+                                <h3 class="product-title"><a href="product-detail.html">Swimbait Pro Series 6"</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(64)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$24.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 7 -->
+                        <div class="product-card" data-category="rods">
+                            <div class="product-badges">
+                                <span class="badge badge-new">New</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?w=500&q=80" alt="Stealth Fly Rod" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=500&q=80" alt="Stealth Fly Rod Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Fly Rods</span>
+                                <h3 class="product-title"><a href="product-detail.html">Stealth Fly Rod 9ft 5wt</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(52)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$399.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 8 -->
+                        <div class="product-card" data-category="reels">
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=500&q=80" alt="Ocean Master Conventional" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1551913902-c92207136625?w=500&q=80" alt="Ocean Master Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Conventional Reels</span>
+                                <h3 class="product-title"><a href="product-detail.html">Ocean Master Conventional</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-count">(93)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$749.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 9 -->
+                        <div class="product-card" data-category="line">
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80" alt="Ultra Braid 50lb" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80" alt="Ultra Braid Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Braided Line</span>
+                                <h3 class="product-title"><a href="product-detail.html">Ultra Braid 50lb 300yds</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(201)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$34.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 10 -->
+                        <div class="product-card" data-category="rods">
+                            <div class="product-badges">
+                                <span class="badge badge-sale">15% OFF</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=500&q=80" alt="Bass Hunter Pro Rod" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?w=500&q=80" alt="Bass Hunter Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Casting Rods</span>
+                                <h3 class="product-title"><a href="product-detail.html">Bass Hunter Pro 7'2" MH</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-count">(145)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="original-price">$259.99</span>
+                                    <span class="current-price">$220.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 11 -->
+                        <div class="product-card" data-category="lures">
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1626128665085-483747621778?w=500&q=80" alt="Topwater Frog" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1582838038154-56b12e66e756?w=500&q=80" alt="Topwater Frog Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Topwater</span>
+                                <h3 class="product-title"><a href="product-detail.html">Hollow Body Frog</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(87)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$12.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 12 -->
+                        <div class="product-card" data-category="reels">
+                            <div class="product-badges">
+                                <span class="badge badge-hot">Top Rated</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                            <a href="product-detail.html" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1551913902-c92207136625?w=500&q=80" alt="Carbon X 4000" class="primary-img">
+                                <img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=500&q=80" alt="Carbon X 4000 Detail" class="hover-img">
+                            </a>
+                            <div class="product-info">
+                                <span class="product-category">Spinning Reels</span>
+                                <h3 class="product-title"><a href="product-detail.html">Carbon X 4000 Spinning</a></h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(312)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$499.99</span>
+                                </div>
+                                <button class="btn btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-top: 3rem;">
+                        <a href="#" class="page-btn" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 4px; color: #666;"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="page-btn active" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #0A0A0A; color: white; border-radius: 4px; font-weight: 600;">1</a>
+                        <a href="#" class="page-btn" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 4px; color: #666;">2</a>
+                        <a href="#" class="page-btn" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 4px; color: #666;">3</a>
+                        <span style="padding: 0 0.5rem;">...</span>
+                        <a href="#" class="page-btn" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 4px; color: #666;">35</a>
+                        <a href="#" class="page-btn" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 4px; color: #666;"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <span class="logo-icon">◆</span>
+                            <span class="logo-text">APEX<span class="logo-accent">TACKLE</span></span>
+                        </a>
+                        <p class="footer-desc">Premium fishing tackle engineered for peak performance. Trusted by professional anglers worldwide.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Shop</h4>
+                        <ul>
+                            <li><a href="products.html?cat=rods">Rods</a></li>
+                            <li><a href="products.html?cat=reels">Reels</a></li>
+                            <li><a href="products.html?cat=lures">Lures</a></li>
+                            <li><a href="products.html?cat=line">Line & Terminal</a></li>
+                            <li><a href="products.html?cat=apparel">Apparel</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Returns</a></li>
+                            <li><a href="#">Warranty</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Pro Staff</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col footer-newsletter">
+                        <h4>Newsletter</h4>
+                        <p>Get exclusive offers and fishing tips.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 APEX Tackle. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                    </div>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar-header">
+            <h3>Your Cart <span class="cart-count">(0)</span></h3>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-sidebar-content">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="products.html" class="btn btn-primary">Start Shopping</a>
+            </div>
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span class="subtotal-amount">$0.00</span>
+            </div>
+            <a href="cart.html" class="btn btn-primary btn-block">View Cart</a>
+            <a href="#" class="btn btn-secondary btn-block">Checkout</a>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | APEX TACKLE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p>FREE SHIPPING ON ORDERS OVER $150 | USE CODE: <strong>APEX25</strong> FOR 25% OFF</p>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header" id="mainHeader">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item has-dropdown">
+                        <a href="products.html">Rods</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-col">
+                                    <h4>By Type</h4>
+                                    <ul>
+                                        <li><a href="products.html?cat=spinning">Spinning Rods</a></li>
+                                        <li><a href="products.html?cat=casting">Casting Rods</a></li>
+                                        <li><a href="products.html?cat=flyrod">Fly Rods</a></li>
+                                        <li><a href="products.html?cat=surf">Surf Rods</a></li>
+                                        <li><a href="products.html?cat=ice">Ice Rods</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-col">
+                                    <h4>By Species</h4>
+                                    <ul>
+                                        <li><a href="products.html?species=bass">Bass</a></li>
+                                        <li><a href="products.html?species=trout">Trout</a></li>
+                                        <li><a href="products.html?species=salmon">Salmon</a></li>
+                                        <li><a href="products.html?species=walleye">Walleye</a></li>
+                                        <li><a href="products.html?species=saltwater">Saltwater</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-col featured">
+                                    <div class="mega-featured-card">
+                                        <img src="https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=400&q=80" alt="Featured Rod">
+                                        <div class="mega-featured-info">
+                                            <span class="tag">New Arrival</span>
+                                            <h5>APEX Elite Series</h5>
+                                            <a href="product-detail.html" class="link-arrow">Shop Now <i class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="products.html">Reels</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-col">
+                                    <h4>By Type</h4>
+                                    <ul>
+                                        <li><a href="products.html?cat=spinning-reels">Spinning Reels</a></li>
+                                        <li><a href="products.html?cat=baitcasting">Baitcasting Reels</a></li>
+                                        <li><a href="products.html?cat=fly-reels">Fly Reels</a></li>
+                                        <li><a href="products.html?cat=conventional">Conventional Reels</a></li>
+                                        <li><a href="products.html?cat=trolling">Trolling Reels</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-col">
+                                    <h4>By Series</h4>
+                                    <ul>
+                                        <li><a href="products.html?series=apex-pro">APEX Pro</a></li>
+                                        <li><a href="products.html?series=titanium">Titanium Elite</a></li>
+                                        <li><a href="products.html?series=carbon-x">Carbon X</a></li>
+                                        <li><a href="products.html?series=stealth">Stealth Series</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-col featured">
+                                    <div class="mega-featured-card">
+                                        <img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=400&q=80" alt="Featured Reel">
+                                        <div class="mega-featured-info">
+                                            <span class="tag">Best Seller</span>
+                                            <h5>Carbon X 3000</h5>
+                                            <a href="product-detail.html" class="link-arrow">Shop Now <i class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="products.html">Lures</a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="products.html?cat=crankbaits">Crankbaits</a></li>
+                                <li><a href="products.html?cat=soft-plastics">Soft Plastics</a></li>
+                                <li><a href="products.html?cat=spinnerbaits">Spinnerbaits</a></li>
+                                <li><a href="products.html?cat=topwater">Topwater</a></li>
+                                <li><a href="products.html?cat=jigs">Jigs</a></li>
+                                <li><a href="products.html?cat=swimbaits">Swimbaits</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="products.html">Line & Terminal</a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="products.html?cat=braided">Braided Line</a></li>
+                                <li><a href="products.html?cat=fluorocarbon">Fluorocarbon</a></li>
+                                <li><a href="products.html?cat=monofilament">Monofilament</a></li>
+                                <li><a href="products.html?cat=leaders">Leaders</a></li>
+                                <li><a href="products.html?cat=hooks">Hooks</a></li>
+                                <li><a href="products.html?cat=swivels">Swivels & Snaps</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="products.html?cat=apparel">Apparel</a></li>
+                    <li class="nav-item"><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">APEX<span class="logo-accent">TACKLE</span></span>
+            </a>
+
+            <div class="nav-right">
+                <button class="nav-icon search-toggle" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="#" class="nav-icon" aria-label="Account">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="cart.html" class="nav-icon cart-icon" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="text" placeholder="Search products, categories, articles..." class="search-input">
+                    <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
+                </form>
+                <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+                <div class="search-suggestions">
+                    <h4>Popular Searches</h4>
+                    <div class="search-tags">
+                        <a href="products.html?q=spinning">Spinning Reels</a>
+                        <a href="products.html?q=bass">Bass Rods</a>
+                        <a href="products.html?q=braided">Braided Line</a>
+                        <a href="products.html?q=crankbait">Crankbaits</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Page -->
+    <section class="cart-page">
+        <div class="container">
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-main">
+                    <div class="cart-header">
+                        <h1>YOUR CART</h1>
+                        <span class="cart-count-label">3 items</span>
+                    </div>
+
+                    <div class="cart-items">
+                        <!-- Cart Item 1 -->
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=200&q=80" alt="Carbon X 3000">
+                            </div>
+                            <div class="cart-item-info">
+                                <h3>Carbon X 3000 Spinning Reel</h3>
+                                <p class="cart-item-meta">Size: 3000 | Color: Black</p>
+                                <div class="cart-item-actions">
+                                    <div class="cart-qty">
+                                        <button>-</button>
+                                        <input type="number" value="1" min="1">
+                                        <button>+</button>
+                                    </div>
+                                    <button class="cart-item-remove">Remove</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-price">
+                                <span class="price">$449.99</span>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 2 -->
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?w=200&q=80" alt="APEX Elite Casting Rod">
+                            </div>
+                            <div class="cart-item-info">
+                                <h3>APEX Elite Casting Rod</h3>
+                                <p class="cart-item-meta">Length: 7'0" | Power: Medium Heavy</p>
+                                <div class="cart-item-actions">
+                                    <div class="cart-qty">
+                                        <button>-</button>
+                                        <input type="number" value="1" min="1">
+                                        <button>+</button>
+                                    </div>
+                                    <button class="cart-item-remove">Remove</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-price">
+                                <span class="price">$299.99</span>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 3 -->
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&q=80" alt="Ultra Braid Line">
+                            </div>
+                            <div class="cart-item-info">
+                                <h3>Ultra Braid 30lb 300yds</h3>
+                                <p class="cart-item-meta">Color: Hi-Vis Yellow</p>
+                                <div class="cart-item-actions">
+                                    <div class="cart-qty">
+                                        <button>-</button>
+                                        <input type="number" value="2" min="1">
+                                        <button>+</button>
+                                    </div>
+                                    <button class="cart-item-remove">Remove</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-price">
+                                <span class="price">$69.98</span>
+                                <span class="original" style="display: block; font-size: 0.8125rem; color: #999; text-decoration: line-through;">$34.99 each</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continue Shopping -->
+                    <div style="margin-top: 2rem;">
+                        <a href="products.html" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #666; font-size: 0.9375rem;">
+                            <i class="fas fa-arrow-left"></i> Continue Shopping
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span class="subtotal-value">$819.96</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span style="color: #00C853; font-weight: 500;">FREE</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (Estimated)</span>
+                        <span>$65.60</span>
+                    </div>
+                    
+                    <div class="promo-code">
+                        <input type="text" placeholder="Promo code">
+                        <button class="btn btn-outline-dark">Apply</button>
+                    </div>
+
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span class="total-value">$885.56</span>
+                    </div>
+
+                    <button class="btn btn-primary checkout-btn">
+                        <i class="fas fa-lock"></i> Secure Checkout
+                    </button>
+                    
+                    <a href="products.html" class="continue-shopping">or Continue Shopping</a>
+
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-apple-pay"></i>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1);">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <i class="fas fa-shield-alt" style="color: #00C853;"></i>
+                            <span style="font-size: 0.8125rem;">Secure 256-bit SSL encryption</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <i class="fas fa-undo" style="color: #0066FF;"></i>
+                            <span style="font-size: 0.8125rem;">30-day hassle-free returns</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <i class="fas fa-headset" style="color: #FF6B35;"></i>
+                            <span style="font-size: 0.8125rem;">Expert customer support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- You May Also Like -->
+            <div class="related-products" style="margin-top: 6rem;">
+                <div class="section-header">
+                    <span class="section-tag">Complete Your Setup</span>
+                    <h2 class="section-title">YOU MAY ALSO LIKE</h2>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card" data-category="lures">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        <a href="product-detail.html" class="product-image">
+                            <img src="https://images.unsplash.com/photo-1626128665085-483747621778?w=500&q=80" alt="DeepStrike Crankbait" class="primary-img">
+                            <img src="https://images.unsplash.com/photo-1582838038154-56b12e66e756?w=500&q=80" alt="DeepStrike Detail" class="hover-img">
+                        </a>
+                        <div class="product-info">
+                            <span class="product-category">Crankbaits</span>
+                            <h3 class="product-title"><a href="product-detail.html">DeepStrike Crankbait Set</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(156)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$49.99</span>
+                            </div>
+                            <button class="btn btn-add-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="accessories">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        <a href="product-detail.html" class="product-image">
+                            <img src="https://images.unsplash.com/photo-1516371535707-512a1e83bb9a?w=500&q=80" alt="Tackle Bag" class="primary-img">
+                            <img src="https://images.unsplash.com/photo-1516371535707-512a1e83bb9a?w=500&q=80" alt="Tackle Bag Detail" class="hover-img">
+                        </a>
+                        <div class="product-info">
+                            <span class="product-category">Accessories</span>
+                            <h3 class="product-title"><a href="product-detail.html">APEX Pro Tackle Bag</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(89)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$79.99</span>
+                            </div>
+                            <button class="btn btn-add-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="lures">
+                        <div class="product-badges">
+                            <span class="badge badge-hot">Best Seller</span>
+                        </div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        <a href="product-detail.html" class="product-image">
+                            <img src="https://images.unsplash.com/photo-1582838038154-56b12e66e756?w=500&q=80" alt="Swimbait Pro" class="primary-img">
+                            <img src="https://images.unsplash.com/photo-1626128665085-483747621778?w=500&q=80" alt="Swimbait Detail" class="hover-img">
+                        </a>
+                        <div class="product-info">
+                            <span class="product-category">Swimbaits</span>
+                            <h3 class="product-title"><a href="product-detail.html">Swimbait Pro Series 6"</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-count">(64)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$24.99</span>
+                            </div>
+                            <button class="btn btn-add-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="accessories">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        <a href="product-detail.html" class="product-image">
+                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80" alt="Leader Material" class="primary-img">
+                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80" alt="Leader Detail" class="hover-img">
+                        </a>
+                        <div class="product-info">
+                            <span class="product-category">Leaders</span>
+                            <h3 class="product-title"><a href="product-detail.html">Fluorocarbon Leader 25lb</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(203)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$19.99</span>
+                            </div>
+                            <button class="btn btn-add-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <span class="logo-icon">◆</span>
+                            <span class="logo-text">APEX<span class="logo-accent">TACKLE</span></span>
+                        </a>
+                        <p class="footer-desc">Premium fishing tackle engineered for peak performance.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Shop</h4>
+                        <ul>
+                            <li><a href="products.html?cat=rods">Rods</a></li>
+                            <li><a href="products.html?cat=reels">Reels</a></li>
+                            <li><a href="products.html?cat=lures">Lures</a></li>
+                            <li><a href="products.html?cat=line">Line</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping</a></li>
+                            <li><a href="#">Returns</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="#">Pro Staff</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col footer-newsletter">
+                        <h4>Newsletter</h4>
+                        <p>Get exclusive offers.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 APEX Tackle. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                    </div>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="quick-view-content">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar-header">
+            <h3>Your Cart <span class="cart-count">(0)</span></h3>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-sidebar-content">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="products.html" class="btn btn-primary">Start Shopping</a>
+            </div>
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span class="subtotal-amount">$0.00</span>
+            </div>
+            <a href="cart.html" class="btn btn-primary btn-block">View Cart</a>
+            <a href="#" class="btn btn-secondary btn-block">Checkout</a>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
