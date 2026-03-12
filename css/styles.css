@@ -454,6 +454,68 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
 }
 
+/* ============================================
+   HAMBURGER MENU BUTTON
+   ============================================ */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 10px 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+
+.menu-toggle:hover {
+    background: var(--light-gray);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease, width 0.2s ease;
+    transform-origin: center;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile nav overlay */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /* Mega Menu */
 .has-dropdown {
     position: relative;
@@ -3643,6 +3705,79 @@ h1, h2, h3, h4, h5, h6 {
 
     .mega-menu,
     .dropdown-menu {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   MOBILE HAMBURGER DRAWER (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Nav-left becomes a slide-in drawer */
+    .nav-left {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 280px !important;
+        height: 100vh !important;
+        background: var(--white) !important;
+        z-index: 999 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+        padding: 5rem 1.75rem 2rem !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 4px 0 30px rgba(0, 0, 0, 0.15) !important;
+        overflow-y: auto !important;
+        min-width: unset !important;
+        flex: none !important;
+    }
+
+    .nav-left.open {
+        transform: translateX(0) !important;
+    }
+
+    /* Nav menu: vertical list inside drawer */
+    .nav-menu {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0 !important;
+        width: 100% !important;
+        overflow: visible !important;
+        white-space: normal !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
+
+    .nav-item {
+        width: 100% !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .nav-item:last-child {
+        border-bottom: none !important;
+    }
+
+    .nav-item > a {
+        display: block !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.04em !important;
+        text-transform: uppercase !important;
+        padding: 0.9rem 0 !important;
+        color: var(--dark) !important;
+        border-bottom: none !important;
+    }
+
+    .nav-item > a::after {
         display: none !important;
     }
 }

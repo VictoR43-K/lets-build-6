@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all modules
     initHeader();
+    initMobileMenu();
     initHeroSlider();
     initSearch();
     initProductFilters();
@@ -16,6 +17,52 @@ document.addEventListener('DOMContentLoaded', function() {
     initQuantitySelectors();
     initScrollAnimations();
 });
+
+/**
+ * Mobile Hamburger Menu
+ */
+function initMobileMenu() {
+    const toggle = document.getElementById('menuToggle');
+    const navLeft = document.querySelector('.nav-left');
+    if (!toggle || !navLeft) return;
+
+    // Create overlay dynamically
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    overlay.id = 'navOverlay';
+    document.body.appendChild(overlay);
+
+    function openMenu() {
+        toggle.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+        navLeft.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        navLeft.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', () => {
+        navLeft.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+    });
+
+    // Close menu when viewport grows past mobile breakpoint
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) closeMenu();
+    });
+}
 
 /**
  * Header Scroll Effects
