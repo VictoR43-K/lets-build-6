@@ -615,11 +615,8 @@ function initMobileMenu() {
     menuToggle.setAttribute('aria-controls', 'navMenu');
     menuToggle.setAttribute('aria-expanded', 'false');
 
-    // Add dedicated mobile submenu toggles so top-level links remain clickable.
     navMenu.querySelectorAll('.has-dropdown').forEach(function(item) {
-        var hasToggle = Array.from(item.children).some(function(child) {
-            return child.classList && child.classList.contains('mobile-submenu-toggle');
-        });
+        const hasToggle = item.querySelector(':scope > .mobile-submenu-toggle');
         if (hasToggle) return;
 
         const toggleBtn = document.createElement('button');
@@ -629,8 +626,7 @@ function initMobileMenu() {
         toggleBtn.innerHTML = '<i class="fas fa-chevron-down" aria-hidden="true"></i>';
         item.appendChild(toggleBtn);
     });
-    
-    // Create overlay element
+
     let overlay = document.querySelector('.nav-menu-overlay');
     if (!overlay) {
         overlay = document.createElement('div');
@@ -638,7 +634,6 @@ function initMobileMenu() {
         document.body.appendChild(overlay);
     }
 
-    // Add mobile menu footer if not exists
     if (!navMenu.querySelector('.mobile-menu-footer')) {
         const mobileFooter = document.createElement('div');
         mobileFooter.className = 'mobile-menu-footer';
@@ -674,121 +669,63 @@ function initMobileMenu() {
         overlay.classList.remove('active');
         document.body.style.overflow = '';
         menuToggle.setAttribute('aria-expanded', 'false');
-        navMenu.style.transform = '';
-        navMenu.style.transition = '';
-        overlay.style.opacity = '';
-        // Close all open dropdowns
+
         navMenu.querySelectorAll('.has-dropdown.active').forEach(function(item) {
             item.classList.remove('active');
         });
     }
 
-    function toggleHamburgerMenu(e) {
+    menuToggle.addEventListener('pointerdown', function(e) {
+        if (!isMobileViewport()) return;
+        e.preventDefault();
         e.stopPropagation();
-        if (e.type === 'touchend') {
-            e.preventDefault();
-        }
         if (navMenu.classList.contains('active')) {
             closeMenu();
         } else {
             openMenu();
         }
-    }
+    });
 
-    // Hamburger toggle
-    menuToggle.addEventListener('click', toggleHamburgerMenu);
-    menuToggle.addEventListener('touchend', toggleHamburgerMenu, { passive: false });
-
-    // Overlay closes menu
     overlay.addEventListener('click', closeMenu);
 
-    // Escape key closes menu
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
             closeMenu();
         }
     });
 
-    // Handle submenu toggle buttons
     navMenu.addEventListener('click', function(e) {
         if (!isMobileViewport()) return;
 
-        var submenuToggle = e.target.closest('.mobile-submenu-toggle');
-        if (!submenuToggle) return;
+        const submenuToggle = e.target.closest('.mobile-submenu-toggle');
+        if (submenuToggle) {
+            e.preventDefault();
+            e.stopPropagation();
 
-        e.preventDefault();
-        e.stopPropagation();
+            const toggleParent = submenuToggle.closest('.has-dropdown');
+            if (!toggleParent) return;
 
-        var toggleParent = submenuToggle.closest('.has-dropdown');
-        if (!toggleParent) return;
+            navMenu.querySelectorAll('.has-dropdown.active').forEach(function(item) {
+                if (item !== toggleParent) item.classList.remove('active');
+            });
 
-        // Close other open dropdowns
-        navMenu.querySelectorAll('.has-dropdown.active').forEach(function(item) {
-            if (item !== toggleParent) item.classList.remove('active');
-        });
+            toggleParent.classList.toggle('active');
+            return;
+        }
 
-        // Toggle this dropdown
-        toggleParent.classList.toggle('active');
+        const link = e.target.closest('a');
+        if (!link) return;
+        closeMenu();
     });
 
-    // Close menu when any link is clicked
-    navMenu.addEventListener('click', function(e) {
-        if (!isMobileViewport()) return;
-
-        var link = e.target.closest('a');
-        if (!link) return;
-
-        // Don't close if clicking the toggle button (handled above)
-        if (link.closest('.mobile-submenu-toggle')) return;
-
-        // Close menu and allow natural navigation
-        closeMenu();
-    }, false);
-
-    // Swipe-to-close
-    var touchStartX = 0;
-    var touchCurrentX = 0;
-    var isSwiping = false;
-
-    navMenu.addEventListener('touchstart', function(e) {
-        touchStartX = e.touches[0].clientX;
-        touchCurrentX = touchStartX;
-        isSwiping = true;
-    }, { passive: true });
-
-    navMenu.addEventListener('touchmove', function(e) {
-        if (!isSwiping) return;
-        touchCurrentX = e.touches[0].clientX;
-        var diff = touchStartX - touchCurrentX;
-        if (diff > 0) {
-            var translateX = Math.min(diff, navMenu.offsetWidth);
-            navMenu.style.transform = 'translateX(-' + translateX + 'px)';
-            navMenu.style.transition = 'none';
-            overlay.style.opacity = Math.max(0, 1 - (diff / navMenu.offsetWidth));
-        }
-    }, { passive: true });
-
-    navMenu.addEventListener('touchend', function() {
-        if (!isSwiping) return;
-        isSwiping = false;
-        var diff = touchStartX - touchCurrentX;
-        navMenu.style.transition = '';
-        navMenu.style.transform = '';
-        overlay.style.opacity = '';
-        if (diff > navMenu.offsetWidth * 0.3) {
-            closeMenu();
-        }
-    }, { passive: true });
-
-    // Close menu on resize to desktop
-    var resizeTimer;
+    let resizeTimer;
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
             if (!isMobileViewport() && navMenu.classList.contains('active')) {
                 closeMenu();
             }
-        }, 100);
+        }, 120);
     });
 }
 
