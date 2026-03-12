@@ -3723,6 +3723,8 @@ h1, h2, h3, h4, h5, h6 {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 2;
+        pointer-events: auto;
     }
 
     /* Nav-left becomes a slide-in drawer */
@@ -3806,6 +3808,7 @@ h1, h2, h3, h4, h5, h6 {
     /* Header layout for tablet */
     .nav-container {
         gap: var(--space-sm);
+        position: relative;
         padding: 0 var(--space-md);
     }
     
