@@ -1287,6 +1287,34 @@ h1, h2, h3, h4, h5, h6 {
     gap: var(--space-xl);
 }
 
+.products-grid.is-empty {
+    display: none;
+}
+
+.products-empty-state {
+    display: none;
+    padding: var(--space-3xl) var(--space-xl);
+    margin-top: var(--space-xl);
+    text-align: center;
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.products-empty-state.active {
+    display: block;
+}
+
+.products-empty-state h3 {
+    margin-bottom: var(--space-sm);
+}
+
+.products-empty-state p {
+    margin-bottom: var(--space-lg);
+    color: var(--gray);
+}
+
 /* Product Card */
 .product-card {
     position: relative;

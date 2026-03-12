@@ -224,32 +224,69 @@ function initSearch() {
 /**
  * Product Filters
  */
+function normalizeProductCategory(category) {
+    if (!category) return 'all';
+
+    const normalized = category.toLowerCase().trim();
+    const categoryMap = {
+        all: 'all',
+        rods: 'rods',
+        rod: 'rods',
+        spinning: 'rods',
+        casting: 'rods',
+        flyrod: 'rods',
+        surf: 'rods',
+        ice: 'rods',
+        reels: 'reels',
+        reel: 'reels',
+        'spinning-reels': 'reels',
+        baitcasting: 'reels',
+        'fly-reels': 'reels',
+        conventional: 'reels',
+        trolling: 'reels',
+        lures: 'lures',
+        crankbaits: 'lures',
+        'soft-plastics': 'lures',
+        spinnerbaits: 'lures',
+        topwater: 'lures',
+        jigs: 'lures',
+        swimbaits: 'lures',
+        line: 'line',
+        braided: 'line',
+        fluorocarbon: 'line',
+        monofilament: 'line',
+        leaders: 'line',
+        hooks: 'line',
+        swivels: 'line',
+        apparel: 'apparel'
+    };
+
+    return categoryMap[normalized] || normalized;
+}
+
+function getProductCategoryLabel(category) {
+    const labels = {
+        all: 'All Products',
+        rods: 'Rods',
+        reels: 'Reels',
+        lures: 'Lures',
+        line: 'Line & Terminal',
+        apparel: 'Apparel'
+    };
+
+    return labels[category] || 'All Products';
+}
+
 function initProductFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-card');
-    
-    if (filterBtns.length === 0) return;
-    
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Update active state
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const filter = btn.dataset.filter;
-            
-            // Filter products
-            productCards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
-                    card.style.display = '';
-                    card.style.animation = 'fadeIn 0.5s ease';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-    
+    const productsGrid = document.querySelector('.products-grid');
+    const productsCount = document.querySelector('.products-count');
+    const pageTitle = document.querySelector('.page-title');
+    const breadcrumbCurrent = document.querySelector('.breadcrumb span:last-child');
+    const searchParams = new URLSearchParams(window.location.search);
+    const initialCategory = normalizeProductCategory(searchParams.get('category') || searchParams.get('cat'));
+
     // Filter section collapse
     const filterSections = document.querySelectorAll('.filter-section h4');
     filterSections.forEach(section => {
@@ -261,6 +298,78 @@ function initProductFilters() {
             }
         });
     });
+
+    if (productCards.length === 0 || !productsGrid) return;
+
+    let emptyState = document.querySelector('.products-empty-state');
+    if (!emptyState) {
+        emptyState = document.createElement('div');
+        emptyState.className = 'products-empty-state';
+        emptyState.innerHTML = `
+            <h3>No products in this category yet</h3>
+            <p>Try another category or browse the full collection.</p>
+            <a href="products.html" class="btn btn-primary">View All Products</a>
+        `;
+        productsGrid.insertAdjacentElement('afterend', emptyState);
+    }
+
+    function updateProductsMeta(category, visibleCount) {
+        const label = getProductCategoryLabel(category);
+
+        if (productsCount) {
+            productsCount.innerHTML = visibleCount > 0
+                ? `Showing <strong>1-${visibleCount}</strong> of <strong>${visibleCount}</strong> products in <strong>${label}</strong>`
+                : `Showing <strong>0</strong> of <strong>0</strong> products in <strong>${label}</strong>`;
+        }
+
+        if (pageTitle) {
+            pageTitle.textContent = category === 'all' ? 'ALL PRODUCTS' : label.toUpperCase();
+        }
+
+        if (breadcrumbCurrent) {
+            breadcrumbCurrent.textContent = label;
+        }
+    }
+
+    function applyProductFilter(filter, updateUrl = true) {
+        const normalizedFilter = normalizeProductCategory(filter);
+        let visibleCount = 0;
+
+        filterBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.filter === normalizedFilter);
+        });
+
+        productCards.forEach(card => {
+            const shouldShow = normalizedFilter === 'all' || card.dataset.category === normalizedFilter;
+            card.style.display = shouldShow ? '' : 'none';
+
+            if (shouldShow) {
+                card.style.animation = 'fadeIn 0.5s ease';
+                visibleCount += 1;
+            }
+        });
+
+        updateProductsMeta(normalizedFilter, visibleCount);
+
+        const showEmptyState = visibleCount === 0;
+        emptyState.classList.toggle('active', showEmptyState);
+        productsGrid.classList.toggle('is-empty', showEmptyState);
+
+        if (updateUrl) {
+            const nextUrl = normalizedFilter === 'all'
+                ? 'products.html'
+                : `products.html?category=${normalizedFilter}`;
+            window.history.replaceState({}, '', nextUrl);
+        }
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            applyProductFilter(btn.dataset.filter);
+        });
+    });
+
+    applyProductFilter(initialCategory || 'all', false);
 }
 
 /**
