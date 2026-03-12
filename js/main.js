@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initGallery();
     initTabs();
     initQuantitySelectors();
-    initMobileMenu();
     initScrollAnimations();
 });
 
@@ -606,127 +605,7 @@ function initQuantitySelectors() {
  * Mobile Menu
  */
 function initMobileMenu() {
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    
-    if (!menuToggle || !navMenu) return;
-
-    const isMobileViewport = () => window.matchMedia('(max-width: 1024px)').matches;
-    menuToggle.setAttribute('aria-controls', 'navMenu');
-    menuToggle.setAttribute('aria-expanded', 'false');
-
-    navMenu.querySelectorAll('.has-dropdown').forEach(function(item) {
-        const hasToggle = item.querySelector(':scope > .mobile-submenu-toggle');
-        if (hasToggle) return;
-
-        const toggleBtn = document.createElement('button');
-        toggleBtn.type = 'button';
-        toggleBtn.className = 'mobile-submenu-toggle';
-        toggleBtn.setAttribute('aria-label', 'Toggle submenu');
-        toggleBtn.innerHTML = '<i class="fas fa-chevron-down" aria-hidden="true"></i>';
-        item.appendChild(toggleBtn);
-    });
-
-    let overlay = document.querySelector('.nav-menu-overlay');
-    if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.className = 'nav-menu-overlay';
-        document.body.appendChild(overlay);
-    }
-
-    if (!navMenu.querySelector('.mobile-menu-footer')) {
-        const mobileFooter = document.createElement('div');
-        mobileFooter.className = 'mobile-menu-footer';
-        mobileFooter.innerHTML = `
-            <div class="mobile-menu-links">
-                <a href="#"><i class="fas fa-user"></i> My Account</a>
-                <a href="cart.html"><i class="fas fa-shopping-bag"></i> Cart</a>
-                <a href="#"><i class="fas fa-heart"></i> Wishlist</a>
-                <a href="#"><i class="fas fa-headset"></i> Support</a>
-            </div>
-            <div class="mobile-menu-social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-        `;
-        navMenu.appendChild(mobileFooter);
-    }
-
-    function openMenu() {
-        if (!isMobileViewport()) return;
-        navMenu.classList.add('active');
-        menuToggle.classList.add('active');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        menuToggle.setAttribute('aria-expanded', 'true');
-    }
-
-    function closeMenu() {
-        navMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-        menuToggle.setAttribute('aria-expanded', 'false');
-
-        navMenu.querySelectorAll('.has-dropdown.active').forEach(function(item) {
-            item.classList.remove('active');
-        });
-    }
-
-    menuToggle.addEventListener('pointerdown', function(e) {
-        if (!isMobileViewport()) return;
-        e.preventDefault();
-        e.stopPropagation();
-        if (navMenu.classList.contains('active')) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
-    });
-
-    overlay.addEventListener('click', closeMenu);
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-            closeMenu();
-        }
-    });
-
-    navMenu.addEventListener('click', function(e) {
-        if (!isMobileViewport()) return;
-
-        const submenuToggle = e.target.closest('.mobile-submenu-toggle');
-        if (submenuToggle) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const toggleParent = submenuToggle.closest('.has-dropdown');
-            if (!toggleParent) return;
-
-            navMenu.querySelectorAll('.has-dropdown.active').forEach(function(item) {
-                if (item !== toggleParent) item.classList.remove('active');
-            });
-
-            toggleParent.classList.toggle('active');
-            return;
-        }
-
-        const link = e.target.closest('a');
-        if (!link) return;
-        closeMenu();
-    });
-
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-            if (!isMobileViewport() && navMenu.classList.contains('active')) {
-                closeMenu();
-            }
-        }, 120);
-    });
+    return;
 }
 
 /**

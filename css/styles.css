@@ -4505,3 +4505,66 @@ h1, h2, h3, h4, h5, h6 {
         pointer-events: auto;
     }
 }
+
+/* ============================================
+   HAMBURGER REMOVED: SIMPLE MOBILE NAV
+   ============================================ */
+@media (max-width: 1024px) {
+    .menu-toggle,
+    .nav-menu-overlay,
+    .mobile-menu-footer,
+    .mobile-submenu-toggle {
+        display: none !important;
+    }
+
+    .nav-left {
+        flex: 1 1 auto !important;
+        min-width: 0;
+    }
+
+    #navMenu.nav-menu {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: var(--space-md) !important;
+        padding: 0 !important;
+        overflow-x: auto;
+        overflow-y: visible;
+        white-space: nowrap;
+        z-index: auto !important;
+    }
+
+    #navMenu.nav-menu::before {
+        content: none !important;
+        display: none !important;
+    }
+
+    #navMenu .nav-item {
+        width: auto !important;
+    }
+
+    #navMenu .nav-item > a {
+        font-family: var(--font-body) !important;
+        font-size: 0.8rem !important;
+        letter-spacing: 0.05em !important;
+        padding: var(--space-md) 0 !important;
+        border-bottom: none !important;
+        color: var(--dark) !important;
+    }
+
+    #navMenu .mega-menu,
+    #navMenu .dropdown-menu {
+        display: none !important;
+    }
+}
