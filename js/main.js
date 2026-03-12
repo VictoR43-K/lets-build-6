@@ -602,13 +602,6 @@ function initQuantitySelectors() {
 }
 
 /**
- * Mobile Menu
- */
-function initMobileMenu() {
-    return;
-}
-
-/**
  * Scroll Animations
  */
 function initScrollAnimations() {
@@ -733,28 +726,6 @@ document.querySelectorAll('.modal-close, .modal-backdrop').forEach(el => {
         document.body.style.overflow = '';
     });
 });
-
-/**
- * Testing Utilities
- */
-window.testMenu = {
-    logMenuState: function() {
-        var menu = document.getElementById('navMenu');
-        var toggle = document.getElementById('menuToggle');
-        console.log('Menu state:', {
-            menuExists: !!menu,
-            toggleExists: !!toggle,
-            menuActive: menu?.classList.contains('active'),
-            toggleActive: toggle?.classList.contains('active'),
-            menuDisplay: window.getComputedStyle(menu).display,
-            toggleDisplay: window.getComputedStyle(toggle).display,
-            isMobile: window.matchMedia('(max-width: 1024px)').matches
-        });
-    },
-    toggleMenu: function(){
-        document.getElementById('menuToggle').click();
-    }
-};
 
 /**
  * Newsletter Form
