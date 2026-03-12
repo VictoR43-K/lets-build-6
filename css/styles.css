@@ -3598,6 +3598,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 1024px) {
+    .nav-container {
+        isolation: isolate;
+    }
+
     /* Layout adjustments */
     .category-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -3657,7 +3661,9 @@ h1, h2, h3, h4, h5, h6 {
     /* Show hamburger */
     .menu-toggle {
         display: flex !important;
-        z-index: 1100;
+        position: relative;
+        z-index: 1202;
+        pointer-events: auto;
     }
 
     /* Nav-left shrinks to hamburger only */
@@ -3669,12 +3675,16 @@ h1, h2, h3, h4, h5, h6 {
     .logo {
         flex: none;
         margin: 0 auto;
+        position: relative;
+        z-index: 1090;
     }
 
     /* Nav-right shrinks to icons only */
     .nav-right {
         flex: 0 0 auto;
         justify-content: flex-end;
+        position: relative;
+        z-index: 1090;
     }
 
     /* Slide-out drawer */
@@ -3697,11 +3707,15 @@ h1, h2, h3, h4, h5, h6 {
         -webkit-overflow-scrolling: touch;
         box-shadow: 4px 0 24px rgba(0,0,0,0.18);
         transform: translateX(-110%);
+        visibility: hidden;
+        pointer-events: none;
         transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .nav-menu.active {
         transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
     }
 
     /* "MENU" label at top */

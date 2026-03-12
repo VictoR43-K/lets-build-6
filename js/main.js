@@ -683,15 +683,21 @@ function initMobileMenu() {
         });
     }
 
-    // Hamburger toggle
-    menuToggle.addEventListener('click', function(e) {
+    function toggleHamburgerMenu(e) {
         e.stopPropagation();
+        if (e.type === 'touchend') {
+            e.preventDefault();
+        }
         if (navMenu.classList.contains('active')) {
             closeMenu();
         } else {
             openMenu();
         }
-    });
+    }
+
+    // Hamburger toggle
+    menuToggle.addEventListener('click', toggleHamburgerMenu);
+    menuToggle.addEventListener('touchend', toggleHamburgerMenu, { passive: false });
 
     // Overlay closes menu
     overlay.addEventListener('click', closeMenu);
