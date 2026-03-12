@@ -279,6 +279,7 @@ function getProductCategoryLabel(category) {
 
 function initProductFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
+    const categoryInputs = document.querySelectorAll('.filters-sidebar input[name="product-category"]');
     const productCards = document.querySelectorAll('.product-card');
     const productsGrid = document.querySelector('.products-grid');
     const productsCount = document.querySelector('.products-count');
@@ -331,13 +332,23 @@ function initProductFilters() {
         }
     }
 
+    function syncCategoryControls(category) {
+        filterBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.filter === category);
+        });
+
+        categoryInputs.forEach(input => {
+            const isActive = input.value === category;
+            input.checked = isActive;
+            input.closest('.filter-option')?.classList.toggle('active', isActive);
+        });
+    }
+
     function applyProductFilter(filter, updateUrl = true) {
         const normalizedFilter = normalizeProductCategory(filter);
         let visibleCount = 0;
 
-        filterBtns.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.filter === normalizedFilter);
-        });
+        syncCategoryControls(normalizedFilter);
 
         productCards.forEach(card => {
             const shouldShow = normalizedFilter === 'all' || card.dataset.category === normalizedFilter;
@@ -366,6 +377,17 @@ function initProductFilters() {
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             applyProductFilter(btn.dataset.filter);
+        });
+    });
+
+    categoryInputs.forEach(input => {
+        input.addEventListener('change', () => {
+            if (!input.checked) {
+                input.checked = true;
+                return;
+            }
+
+            applyProductFilter(input.value);
         });
     });
 
