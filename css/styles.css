@@ -3718,6 +3718,13 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
     }
 
+    /* Center logo when hamburger is on the left */
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     /* Nav-left becomes a slide-in drawer */
     .nav-left {
         position: fixed !important;
