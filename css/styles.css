@@ -1336,6 +1336,47 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary);
 }
 
+.bestsellers-section {
+    padding: var(--space-4xl) 0;
+    background: var(--white);
+}
+
+.bestsellers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+.bestseller-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.bestseller-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.bestseller-card h3 {
+    margin: 0;
+    padding: var(--space-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.bestseller-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
 .section-nav {
     display: flex;
     gap: var(--space-sm);
@@ -3977,6 +4018,10 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 
 @media (max-width: 1200px) {
+    .bestsellers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .shop-classification-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -4377,6 +4422,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 560px) {
+    .bestsellers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bestseller-card img {
+        height: 200px;
+    }
+
     .shop-classification-grid {
         grid-auto-flow: column;
         grid-auto-columns: minmax(240px, 1fr);
