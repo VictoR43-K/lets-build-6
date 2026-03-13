@@ -238,27 +238,37 @@ function initHeader() {
     const announcementBar = document.querySelector('.announcement-bar');
     
     if (!header) return;
-    
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        // Add scrolled class when scrolling down
-        if (currentScroll > 50) {
-            header.classList.add('scrolled');
-            if (announcementBar) {
-                announcementBar.style.transform = 'translateY(-100%)';
-            }
-        } else {
-            header.classList.remove('scrolled');
-            if (announcementBar) {
-                announcementBar.style.transform = 'translateY(0)';
-            }
+
+    let isScrolled = false;
+    let ticking = false;
+
+    function applyHeaderState() {
+        const nextScrolled = window.scrollY > 50;
+
+        if (nextScrolled === isScrolled) {
+            ticking = false;
+            return;
         }
-        
-        lastScroll = currentScroll;
-    });
+
+        isScrolled = nextScrolled;
+        header.classList.toggle('scrolled', isScrolled);
+
+        if (announcementBar) {
+            announcementBar.style.transform = isScrolled ? 'translateY(-100%)' : 'translateY(0)';
+        }
+
+        ticking = false;
+    }
+
+    function onScroll() {
+        if (ticking) return;
+
+        ticking = true;
+        window.requestAnimationFrame(applyHeaderState);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    applyHeaderState();
 }
 
 /**
