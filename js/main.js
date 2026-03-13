@@ -75,13 +75,20 @@ function initLiveChat() {
     widget.className = 'support-widget';
     widget.innerHTML = `
         <button class="support-launcher" id="supportLauncher" aria-label="Open live support" aria-expanded="false">
-            <i class="fas fa-comment-dots"></i>
+            <i class="fas fa-comments"></i>
+            <span class="support-launcher-label">Chat</span>
         </button>
-        <div class="support-panel" id="supportPanel" aria-hidden="true">
+        <div class="support-panel" id="supportPanel" aria-hidden="true" role="dialog" aria-label="Live support chat">
             <div class="support-header">
-                <div>
+                <div class="support-header-meta">
+                    <span class="support-avatar" aria-hidden="true">
+                        <i class="fas fa-headset"></i>
+                    </span>
+                    <span class="support-status-dot" aria-hidden="true"></span>
+                </div>
+                <div class="support-header-copy">
                     <h4>APEX Live Support</h4>
-                    <p>Online now</p>
+                    <p>Online now • replies in under 2 min</p>
                 </div>
                 <button class="support-close" id="supportClose" aria-label="Close live support">
                     <i class="fas fa-times"></i>
@@ -169,7 +176,7 @@ function initLiveChat() {
         }, 550);
     }
 
-    addMessage('Hi! Need help picking gear, tracking an order, or warranty support?', 'support');
+    addMessage('Welcome to APEX support. Need help with gear recommendations, tracking, or warranty?', 'support');
 
     launcher.addEventListener('click', () => {
         panel.classList.contains('active') ? closeChat() : openChat();
