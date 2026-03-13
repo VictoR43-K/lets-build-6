@@ -118,6 +118,7 @@ function initLiveChat() {
     const quickActions = document.getElementById('supportQuickActions');
     const form = document.getElementById('supportForm');
     const input = document.getElementById('supportInput');
+    let typingIndicator = null;
 
     if (!launcher || !panel || !closeBtn || !messages || !quickActions || !form || !input) return;
 
@@ -127,6 +128,29 @@ function initLiveChat() {
         item.textContent = text;
         messages.appendChild(item);
         messages.scrollTop = messages.scrollHeight;
+    }
+
+    function showTypingIndicator() {
+        if (typingIndicator) return;
+
+        typingIndicator = document.createElement('div');
+        typingIndicator.className = 'support-typing';
+        typingIndicator.setAttribute('aria-hidden', 'true');
+        typingIndicator.innerHTML = `
+            <span></span>
+            <span></span>
+            <span></span>
+        `;
+
+        messages.appendChild(typingIndicator);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    function hideTypingIndicator() {
+        if (!typingIndicator) return;
+
+        typingIndicator.remove();
+        typingIndicator = null;
     }
 
     function getAutoReply(message) {
@@ -162,6 +186,7 @@ function initLiveChat() {
         panel.classList.remove('active');
         launcher.setAttribute('aria-expanded', 'false');
         panel.setAttribute('aria-hidden', 'true');
+        hideTypingIndicator();
     }
 
     function handleUserMessage(text) {
@@ -170,8 +195,10 @@ function initLiveChat() {
 
         addMessage(clean, 'user');
         input.value = '';
+        showTypingIndicator();
 
         setTimeout(() => {
+            hideTypingIndicator();
             addMessage(getAutoReply(clean), 'support');
         }, 550);
     }
