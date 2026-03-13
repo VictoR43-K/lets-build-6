@@ -69,32 +69,32 @@ function initMobileMenu() {
  * Live Chat Widget
  */
 function initLiveChat() {
-    if (document.getElementById('liveChatLauncher')) return;
+    if (document.getElementById('supportLauncher')) return;
 
     const widget = document.createElement('div');
-    widget.className = 'live-chat-widget';
+    widget.className = 'support-widget';
     widget.innerHTML = `
-        <button class="live-chat-launcher" id="liveChatLauncher" aria-label="Open live chat" aria-expanded="false">
+        <button class="support-launcher" id="supportLauncher" aria-label="Open live support" aria-expanded="false">
             <i class="fas fa-comment-dots"></i>
         </button>
-        <div class="live-chat-panel" id="liveChatPanel" aria-hidden="true">
-            <div class="live-chat-header">
+        <div class="support-panel" id="supportPanel" aria-hidden="true">
+            <div class="support-header">
                 <div>
                     <h4>APEX Live Support</h4>
                     <p>Online now</p>
                 </div>
-                <button class="live-chat-close" id="liveChatClose" aria-label="Close live chat">
+                <button class="support-close" id="supportClose" aria-label="Close live support">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="live-chat-messages" id="liveChatMessages"></div>
-            <div class="live-chat-quick-actions" id="liveChatQuickActions">
+            <div class="support-messages" id="supportMessages"></div>
+            <div class="support-quick-actions" id="supportQuickActions">
                 <button type="button" data-message="Track my order">Track order</button>
                 <button type="button" data-message="Help me pick a rod">Choose a rod</button>
                 <button type="button" data-message="Warranty support">Warranty</button>
             </div>
-            <form class="live-chat-input" id="liveChatForm">
-                <input type="text" id="liveChatInput" placeholder="Type your message..." maxlength="220" required>
+            <form class="support-input" id="supportForm">
+                <input type="text" id="supportInput" placeholder="Type your message..." maxlength="220" required>
                 <button type="submit" aria-label="Send message">
                     <i class="fas fa-paper-plane"></i>
                 </button>
@@ -104,19 +104,19 @@ function initLiveChat() {
 
     document.body.appendChild(widget);
 
-    const launcher = document.getElementById('liveChatLauncher');
-    const panel = document.getElementById('liveChatPanel');
-    const closeBtn = document.getElementById('liveChatClose');
-    const messages = document.getElementById('liveChatMessages');
-    const quickActions = document.getElementById('liveChatQuickActions');
-    const form = document.getElementById('liveChatForm');
-    const input = document.getElementById('liveChatInput');
+    const launcher = document.getElementById('supportLauncher');
+    const panel = document.getElementById('supportPanel');
+    const closeBtn = document.getElementById('supportClose');
+    const messages = document.getElementById('supportMessages');
+    const quickActions = document.getElementById('supportQuickActions');
+    const form = document.getElementById('supportForm');
+    const input = document.getElementById('supportInput');
 
     if (!launcher || !panel || !closeBtn || !messages || !quickActions || !form || !input) return;
 
     function addMessage(text, sender = 'support') {
         const item = document.createElement('div');
-        item.className = `live-chat-message ${sender}`;
+        item.className = `support-message ${sender}`;
         item.textContent = text;
         messages.appendChild(item);
         messages.scrollTop = messages.scrollHeight;
