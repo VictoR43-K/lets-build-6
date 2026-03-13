@@ -75,7 +75,7 @@ function initLiveChat() {
     widget.className = 'support-widget';
     widget.innerHTML = `
         <button class="support-launcher" id="supportLauncher" aria-label="Open live support" aria-expanded="false">
-            <i class="fas fa-comments"></i>
+            <span class="support-launcher-glyph" aria-hidden="true"></span>
             <span class="support-launcher-label">Chat</span>
         </button>
         <div class="support-panel" id="supportPanel" aria-hidden="true" role="dialog" aria-label="Live support chat">
