@@ -704,7 +704,7 @@ function renderCartSidebar() {
     if (cart.length === 0) {
         content.innerHTML = `
             <div class="cart-empty">
-                <i class="fas fa-shopping-bag"></i>
+                <i class="fas fa-shopping-cart"></i>
                 <p>Your cart is empty</p>
                 <a href="products.html" class="btn btn-primary">Start Shopping</a>
             </div>
@@ -743,7 +743,7 @@ function renderCartPage() {
     if (cart.length === 0) {
         cartItems.innerHTML = `
             <div class="cart-empty" style="text-align: center; padding: 4rem 2rem;">
-                <i class="fas fa-shopping-bag" style="font-size: 4rem; color: #ccc; margin-bottom: 1.5rem;"></i>
+                <i class="fas fa-shopping-cart" style="font-size: 4rem; color: #ccc; margin-bottom: 1.5rem;"></i>
                 <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Your cart is empty</h3>
                 <p style="color: #666; margin-bottom: 2rem;">Looks like you haven't added anything to your cart yet.</p>
                 <a href="products.html" class="btn btn-primary btn-large">Start Shopping</a>
