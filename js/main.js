@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initProductFilters();
     initProductCards();
     initCart();
+    initProductDetailPage();
     initGallery();
     initTabs();
     initQuantitySelectors();
@@ -836,6 +837,119 @@ function renderCartPage() {
     document.querySelectorAll('.total-value').forEach(el => {
         el.textContent = '$' + total.toFixed(2);
     });
+}
+
+function initProductDetailPage() {
+    if (!window.location.pathname.toLowerCase().endsWith('product-detail.html')) return;
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const productSlug = searchParams.get('product');
+    if (!productSlug) return;
+
+    const products = {
+        'apex-elite-casting-rod': {
+            title: 'APEX ELITE CASTING ROD',
+            breadcrumb: 'APEX Elite Casting Rod',
+            categoryLabel: 'Rods',
+            categoryLink: 'products.html?cat=rods',
+            price: '$299.99',
+            image: 'images/apex-casting-rod.jpeg'
+        },
+        'carbon-x-3000-spinning-reel': {
+            title: 'CARBON X 3000 SPINNING REEL',
+            breadcrumb: 'Carbon X 3000 Spinning Reel',
+            categoryLabel: 'Reels',
+            categoryLink: 'products.html?cat=reels',
+            price: '$449.99',
+            image: 'images/carbon-x-3000.jpeg'
+        },
+        'pro-tournament-spinning-rod': {
+            title: 'PRO TOURNAMENT SPINNING ROD',
+            breadcrumb: 'Pro Tournament Spinning Rod',
+            categoryLabel: 'Rods',
+            categoryLink: 'products.html?cat=rods',
+            price: '$279.99',
+            image: 'images/pro-tournament-spinning-rod.jpeg'
+        },
+        'deepstrike-crankbait-set': {
+            title: 'DEEPSTRIKE CRANKBAIT SET',
+            breadcrumb: 'DeepStrike Crankbait Set',
+            categoryLabel: 'Lures',
+            categoryLink: 'products.html?cat=lures',
+            price: '$49.99',
+            image: 'images/deepstrike-crankbait.jpeg'
+        },
+        'titanium-elite-baitcaster': {
+            title: 'TITANIUM ELITE BAITCASTER',
+            breadcrumb: 'Titanium Elite Baitcaster',
+            categoryLabel: 'Reels',
+            categoryLink: 'products.html?cat=reels',
+            price: '$599.99',
+            image: 'images/tatanium-elite-baitcaster.jpeg'
+        },
+        'swimbait-pro-series-6': {
+            title: 'SWIMBAIT PRO SERIES 6"',
+            breadcrumb: 'Swimbait Pro Series 6"',
+            categoryLabel: 'Lures',
+            categoryLink: 'products.html?cat=lures',
+            price: '$24.99',
+            image: 'images/swimbait-pro.jpeg'
+        },
+        'stealth-fly-rod-9ft-5wt': {
+            title: 'STEALTH FLY ROD 9FT 5WT',
+            breadcrumb: 'Stealth Fly Rod 9ft 5wt',
+            categoryLabel: 'Rods',
+            categoryLink: 'products.html?cat=rods',
+            price: '$399.99',
+            image: 'images/stealth-fly-rod-9ft-5wt.jpeg'
+        },
+        'ocean-master-conventional': {
+            title: 'OCEAN MASTER CONVENTIONAL',
+            breadcrumb: 'Ocean Master Conventional',
+            categoryLabel: 'Reels',
+            categoryLink: 'products.html?cat=reels',
+            price: '$749.99',
+            image: 'images/ocean-master-conventional.jpeg'
+        }
+    };
+
+    const product = products[productSlug];
+    if (!product) return;
+
+    const titleElement = document.querySelector('.product-detail-title');
+    if (titleElement) {
+        titleElement.innerHTML = product.title.replace(/\s(?=[^\s]+$)/, '<br>');
+    }
+
+    const breadcrumbCurrent = document.querySelector('.breadcrumb span:last-child');
+    if (breadcrumbCurrent) {
+        breadcrumbCurrent.textContent = product.breadcrumb;
+    }
+
+    const breadcrumbCategoryLink = document.querySelector('.breadcrumb a:nth-of-type(2)');
+    if (breadcrumbCategoryLink) {
+        breadcrumbCategoryLink.textContent = product.categoryLabel;
+        breadcrumbCategoryLink.setAttribute('href', product.categoryLink);
+    }
+
+    const priceElement = document.querySelector('.product-detail-price .current-price');
+    if (priceElement) {
+        priceElement.textContent = product.price;
+    }
+
+    const mainImage = document.querySelector('.gallery-main img');
+    if (mainImage) {
+        mainImage.src = product.image;
+        mainImage.alt = product.breadcrumb;
+    }
+
+    const galleryThumbs = document.querySelectorAll('.gallery-thumb img');
+    galleryThumbs.forEach(thumb => {
+        thumb.src = product.image;
+        thumb.alt = `${product.breadcrumb} thumbnail`;
+    });
+
+    document.title = `${product.breadcrumb} | APEX TACKLE`;
 }
 
 /**
