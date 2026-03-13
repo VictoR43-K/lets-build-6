@@ -1276,6 +1276,108 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   SHOP BY CLASSIFICATION
+   ============================================ */
+
+.classification-section {
+    padding: var(--space-3xl) 0;
+    background: var(--light-gray);
+}
+
+.classification-header .section-title {
+    color: var(--text-primary);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+}
+
+.classification-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-lg);
+}
+
+.classification-card {
+    display: block;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.classification-image-wrap {
+    border-radius: 0;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.classification-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.classification-content {
+    padding-top: var(--space-md);
+}
+
+.classification-content h3 {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.classification-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+}
+
+@media (hover: hover) {
+    .classification-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .classification-card:hover .classification-image-wrap img {
+        transform: scale(1.06);
+    }
+
+    .classification-card:hover .classification-link {
+        color: var(--primary);
+    }
+}
+
+@media (max-width: 900px) {
+    .classification-grid {
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(220px, 1fr);
+        grid-template-columns: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: var(--space-sm);
+    }
+
+    .classification-grid::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .classification-grid::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: var(--radius-full);
+    }
+
+    .classification-card {
+        scroll-snap-align: start;
+    }
+}
+
+/* ============================================
    FEATURED PRODUCTS
    ============================================ */
 
