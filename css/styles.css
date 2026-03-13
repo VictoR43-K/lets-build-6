@@ -1142,16 +1142,10 @@ h1, h2, h3, h4, h5, h6 {
     padding: var(--space-4xl) 0;
 }
 
-.categories-section-image-only {
-    padding-bottom: var(--space-lg);
-}
-
-.categories-section-image-only .category-grid {
-    display: none;
-}
-
-.categories-section-image-only + .featured-section {
-    padding-top: 0;
+.category-cta {
+    margin-top: var(--space-xl);
+    display: flex;
+    justify-content: center;
 }
 
 .category-grid {
