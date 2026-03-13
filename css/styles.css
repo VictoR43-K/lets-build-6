@@ -454,6 +454,10 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
 }
 
+.nav-right .cart-icon .cart-count:empty {
+    display: none;
+}
+
 /* ============================================
    HAMBURGER MENU BUTTON
    ============================================ */

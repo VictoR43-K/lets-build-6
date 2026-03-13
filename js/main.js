@@ -714,11 +714,16 @@ function saveCart() {
 }
 
 function updateCartCount() {
-    const countElements = document.querySelectorAll('.cart-count');
+    const badgeElements = document.querySelectorAll('.nav-right .cart-icon .cart-count');
+    const sidebarCountElements = document.querySelectorAll('.cart-sidebar-header .cart-count');
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    
-    countElements.forEach(el => {
-        el.textContent = totalItems;
+
+    badgeElements.forEach(el => {
+        el.textContent = totalItems > 0 ? totalItems : '';
+    });
+
+    sidebarCountElements.forEach(el => {
+        el.textContent = totalItems > 0 ? `(${totalItems})` : '';
     });
 }
 
