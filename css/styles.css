@@ -3612,33 +3612,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .support-launcher {
-    min-width: 62px;
-    height: 62px;
-    padding: 0 var(--space-md);
-    border-radius: var(--radius-full);
+    width: 65px;
+    min-width: 65px;
+    height: 65px;
+    padding: 0;
+    border-radius: 50%;
     border: none;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: #0f5c63;
     color: var(--white);
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 500;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.45rem;
-    box-shadow: var(--shadow-lg);
+    gap: 0;
+    box-shadow: 0 10px 24px rgba(15, 92, 99, 0.32);
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 .support-launcher:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-xl);
-    filter: saturate(1.08);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(15, 92, 99, 0.4);
+    background: #116b73;
 }
 
 .support-launcher-label {
-    font-size: 0.84rem;
-    letter-spacing: 0.02em;
+    display: none;
 }
 
 .support-panel {
@@ -4267,13 +4267,9 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .support-launcher {
-        min-width: 56px;
-        height: 56px;
-        padding: 0 var(--space-md);
-    }
-
-    .support-launcher-label {
-        display: none;
+        width: 65px;
+        min-width: 65px;
+        height: 65px;
     }
 
     .support-panel {
