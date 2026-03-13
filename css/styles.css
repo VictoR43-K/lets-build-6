@@ -3998,6 +3998,23 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 @media (max-width: 1024px) {
     .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 280px);
+        overflow: visible;
+        scrollbar-width: auto;
+    }
+
+    .category-large {
+        grid-row: span 1;
+    }
+
+    .category-wide {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-grid {
         grid-auto-flow: column;
         grid-auto-columns: minmax(280px, 1fr);
         grid-template-columns: none;
@@ -4015,14 +4032,6 @@ h1, h2, h3, h4, h5, h6 {
 
     .category-card {
         scroll-snap-align: start;
-    }
-
-    .category-large {
-        grid-row: span 1;
-    }
-
-    .category-wide {
-        grid-column: span 2;
     }
 
     .products-layout {
