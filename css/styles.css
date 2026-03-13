@@ -1274,6 +1274,46 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--white);
 }
 
+.shop-classification-section {
+    padding: var(--space-4xl) 0;
+    background: var(--light-gray);
+}
+
+.shop-classification-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+.shop-classification-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.shop-classification-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.shop-classification-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    padding: var(--space-md);
+    margin: 0;
+}
+
+.shop-classification-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
 .section-nav {
     display: flex;
     gap: var(--space-sm);
@@ -3915,6 +3955,10 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 
 @media (max-width: 1200px) {
+    .shop-classification-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .products-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -4287,6 +4331,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 560px) {
+    .shop-classification-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shop-classification-card img {
+        height: 200px;
+    }
+
     .nav-right {
         gap: 0.25rem;
     }
