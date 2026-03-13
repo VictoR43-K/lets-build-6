@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all modules
     initHeader();
     initMobileMenu();
+    initLiveChat();
     initHeroSlider();
     initSearch();
     initProductFilters();
@@ -61,6 +62,137 @@ function initMobileMenu() {
     // Close menu when viewport grows past mobile breakpoint
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) closeMenu();
+    });
+}
+
+/**
+ * Live Chat Widget
+ */
+function initLiveChat() {
+    if (document.getElementById('liveChatLauncher')) return;
+
+    const widget = document.createElement('div');
+    widget.className = 'live-chat-widget';
+    widget.innerHTML = `
+        <button class="live-chat-launcher" id="liveChatLauncher" aria-label="Open live chat" aria-expanded="false">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+        <div class="live-chat-panel" id="liveChatPanel" aria-hidden="true">
+            <div class="live-chat-header">
+                <div>
+                    <h4>APEX Live Support</h4>
+                    <p>Online now</p>
+                </div>
+                <button class="live-chat-close" id="liveChatClose" aria-label="Close live chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="live-chat-messages" id="liveChatMessages"></div>
+            <div class="live-chat-quick-actions" id="liveChatQuickActions">
+                <button type="button" data-message="Track my order">Track order</button>
+                <button type="button" data-message="Help me pick a rod">Choose a rod</button>
+                <button type="button" data-message="Warranty support">Warranty</button>
+            </div>
+            <form class="live-chat-input" id="liveChatForm">
+                <input type="text" id="liveChatInput" placeholder="Type your message..." maxlength="220" required>
+                <button type="submit" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    `;
+
+    document.body.appendChild(widget);
+
+    const launcher = document.getElementById('liveChatLauncher');
+    const panel = document.getElementById('liveChatPanel');
+    const closeBtn = document.getElementById('liveChatClose');
+    const messages = document.getElementById('liveChatMessages');
+    const quickActions = document.getElementById('liveChatQuickActions');
+    const form = document.getElementById('liveChatForm');
+    const input = document.getElementById('liveChatInput');
+
+    if (!launcher || !panel || !closeBtn || !messages || !quickActions || !form || !input) return;
+
+    function addMessage(text, sender = 'support') {
+        const item = document.createElement('div');
+        item.className = `live-chat-message ${sender}`;
+        item.textContent = text;
+        messages.appendChild(item);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    function getAutoReply(message) {
+        const lower = message.toLowerCase();
+
+        if (lower.includes('track') || lower.includes('order')) {
+            return 'Share your order number and email, and we can help track it right away.';
+        }
+
+        if (lower.includes('rod') || lower.includes('bass') || lower.includes('trout')) {
+            return 'For all-around performance, start with our APEX Elite Casting Rod. If you tell me your target species, I can narrow it down.';
+        }
+
+        if (lower.includes('warranty') || lower.includes('return')) {
+            return 'Our team can guide you through warranty or returns. Send your order number and a quick issue description.';
+        }
+
+        if (lower.includes('reel') || lower.includes('line') || lower.includes('lure')) {
+            return 'Great choice. Tell me your budget and fishing style, and I’ll suggest the best setup.';
+        }
+
+        return 'Thanks for reaching out. We can help with gear recommendations, order tracking, and warranty support.';
+    }
+
+    function openChat() {
+        panel.classList.add('active');
+        launcher.setAttribute('aria-expanded', 'true');
+        panel.setAttribute('aria-hidden', 'false');
+        input.focus();
+    }
+
+    function closeChat() {
+        panel.classList.remove('active');
+        launcher.setAttribute('aria-expanded', 'false');
+        panel.setAttribute('aria-hidden', 'true');
+    }
+
+    function handleUserMessage(text) {
+        const clean = text.trim();
+        if (!clean) return;
+
+        addMessage(clean, 'user');
+        input.value = '';
+
+        setTimeout(() => {
+            addMessage(getAutoReply(clean), 'support');
+        }, 550);
+    }
+
+    addMessage('Hi! Need help picking gear, tracking an order, or warranty support?', 'support');
+
+    launcher.addEventListener('click', () => {
+        panel.classList.contains('active') ? closeChat() : openChat();
+    });
+
+    closeBtn.addEventListener('click', closeChat);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && panel.classList.contains('active')) {
+            closeChat();
+        }
+    });
+
+    quickActions.addEventListener('click', (e) => {
+        const target = e.target.closest('button[data-message]');
+        if (!target) return;
+
+        handleUserMessage(target.dataset.message || '');
+    });
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleUserMessage(input.value);
     });
 }
 
